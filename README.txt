@@ -1,11 +1,6 @@
-This code is designed to make it easy to migrate spaces and associated objects such as visualizations and
-dashboards from one Kibana instance to another. For example, if migrating from an on-premises Elasticsearch and
-Kibana installation to an Elastic Cloud service, you may find these scripts to be helpful.
+This code is designed to make it easy to migrate spaces and associated objects such as visualizations and dashboards from one Kibana instance to another. For example, if migrating from an on-premises Elasticsearch and Kibana installation to an Elastic Cloud service, you may find these scripts to be helpful.
 
-The preferred manner to migrate is still to use snapshot and restore functionality, but in some instances that
-may not be possible, and then exporting/importing objects from Kibana becomes the alternative route. However,
-manually doing this through the UI is tedious,and so the two scripts here 'export_kibana.py' and
-'import_kibana.py' are designed to automate this process.
+For a more detailed overview of why you may need these scripts see: https://alexmarquardt.com/2024/05/03/automating-the-import-and-export-of-kibana-saved-objects/
 
 
 To set up this project, please follow these steps:
