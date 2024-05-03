@@ -111,8 +111,11 @@ def main():
 
     print("About to import the following spaces with the specified modes:")
     for space_detail in spaces_details:
-        print(f"- {space_detail['id']} (New Copies: {params['createNewCopies']}, Overwrite: {params['overwrite']}, "
-              f"Compatibility Mode: {params['compatibilityMode']})")
+        print(f"----------------------------------\n"
+              f"Space: {space_detail['id']}"
+              f"\n   Overwrite: {params['overwrite']}"
+              f"\n   New Copies: {params['createNewCopies']},  "
+              f"\n   Compatibility Mode: {params['compatibilityMode']}")
     if input("Proceed with import? (yes/no) ") != "yes":
         print("Import canceled.")
         return
