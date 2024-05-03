@@ -126,5 +126,6 @@ def main():
         file_path = os.path.join(args.import_dir, f"{space_id}.ndjson")
         import_objects(session, args.kibana_url, file_path, params, space_id)
 
+
 if __name__ == "__main__":
     main()
