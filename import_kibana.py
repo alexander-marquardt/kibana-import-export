@@ -46,8 +46,6 @@ def main():
     # Enforce mutual exclusivity
     if args.createNewCopies and (args.overwrite or args.compatibilityMode):
         parser.error("The --createNewCopies option cannot be used with --overwrite or --compatibilityMode.")
-    if (args.overwrite or args.compatibilityMode) and not args.createNewCopies:
-        parser.error("The --overwrite and --compatibilityMode options require --createNewCopies to be false.")
 
     password = getpass("Enter your password: ")
     session = requests.Session()
