@@ -53,6 +53,7 @@ def validate_spaces_and_types(spaces, types, all_spaces, all_types):
         logging.error("Exiting due to invalid input.")
         exit(1)
 
+
 def main():
     parser = argparse.ArgumentParser(description="Export objects and details from specified spaces in Kibana, or all spaces if none are specified.",
                                      epilog="Example: export_kibana.py http://localhost:5601 username /path/to/export --spaces space1 space2 --types dashboard visualization")
