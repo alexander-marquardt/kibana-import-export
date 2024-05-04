@@ -38,18 +38,20 @@ def import_objects(session, url, file_path, params, space_id):
     # Prepare headers
     headers = {'kbn-xsrf': 'true'}
 
-    # Log the action
-    logging.info(f"Posting to {import_url} headers={headers} query_params={query_params}")
+
 
     # Open the file and prepare it for sending
     with open(file_path, 'rb') as file:
         files = {'file': ('export.ndjson', file, 'application/ndjson')}
+        # Log the action
+        logging.info(f"Posting objects to space: {space_id}\n\tFile: {file_path}\
+        \n\tURL: {import_url}\n\tHeaders: {headers}\n\tQuery: {query_params}")
         # Send the POST request with the file and query parameters
         response = session.post(import_url, headers=headers, files=files, params=query_params)
 
         try:
             response.raise_for_status()
-            logging.info(f"Import successful to {url} for space {space_id}")
+            logging.info(f"Import successful for space {space_id}\n")
         except requests.exceptions.HTTPError as e:
             logging.error(f"Failed to import objects for space {space_id}: {e}")
             logging.error(f"Response was: {response.text}")
